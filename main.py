@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     print(file)
     testing = Speaker(file)
-    testing.adjustAmbient(10,1500)
+    testing.adjustAmbient(10,200)
     #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     #print("\nGoogle: "+testing.listenToAudioFile_Google())
     print("\n")
