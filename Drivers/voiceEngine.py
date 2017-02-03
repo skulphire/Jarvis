@@ -68,7 +68,7 @@ class Speaker(object):
             while(start <= stop):
                 self.adjustAmbient(1,50)
                 with speech_recognition.AudioFile(self.audioFile) as source:
-                    audio = self.recognizer.record(source,8,start)
+                    audio = self.recognizer.record(source,10,start)
 
                 try:
                     print(">"+self.recognizer.recognize_google(audio))
@@ -78,6 +78,6 @@ class Speaker(object):
                 except speech_recognition.RequestError as e:
                     print("recog error; {0}".format(e))
                 #return ""
-                start = start + 8
+                start = start + 10
         else:
             return "File Does Not Exist"
