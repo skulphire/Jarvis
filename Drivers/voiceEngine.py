@@ -56,13 +56,16 @@ class Speaker(object):
             return ""
         else:
             return "File Does Not Exist"
+    def adjustAmbient(self,duration, threshold):
+        with speech_recognition.AudioFile(self.audioFile) as source:
+            self.recognizer.adjust_for_ambient_noise(source, duration)
+            self.recognizer.energy_threshold()
 
     def listenToAudioFileCont_Google(self,start,stop):
 
         if (self.fileExists):
             while(start != stop):
                 with speech_recognition.AudioFile(self.audioFile) as source:
-                    self.recognizer.adjust_for_ambient_noise(source,5)
                     audio = self.recognizer.record(source,5,start)
 
                 try:
