@@ -10,7 +10,7 @@ class Speaker(object):
 
         self.fileExists = False
         if(filePath != None):
-            self.audioFile = path.abspath(filePath)
+            self.audioFile = filePath#path.abspath(filePath)
             if(path.exists(self.audioFile)):
                 self.fileExists = True
 
