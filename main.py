@@ -10,4 +10,4 @@ if __name__ == '__main__':
     #print(file)
     testing = Speaker(file)
     print("Sphinx: "+testing.listenToAudioFile_Sphinx())
-    print("Google: "+testing.listenToAudioFile_Google())
+    print("\nGoogle: "+testing.listenToAudioFile_Google())
