@@ -5,7 +5,7 @@ if __name__ == '__main__':
     file  = "nothing"
     for root,dirs,files in os.walk("/home/creghton"):
         if search in files:
-            file = os.path.abspath("/"+search)
+            file = os.path.join(root,search)
 
     print(file)
     testing = Speaker(file)
