@@ -9,5 +9,5 @@ if __name__ == '__main__':
 
     #print(file)
     testing = Speaker(file)
-    print("Sphinx: "+testing.listenToAudioFile_Sphinx())
+    #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     print("\nGoogle: "+testing.listenToAudioFile_Google())
