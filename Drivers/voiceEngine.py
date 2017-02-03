@@ -7,6 +7,7 @@ class Speaker(object):
         #talking engine
         self.engine = pyttsx.init('espeak')
         self.engine.setProperty('rate', 150)
+
         self.fileExists = False
         if(filePath != None):
             self.audioFile = path.abspath(filePath)
@@ -36,7 +37,7 @@ class Speaker(object):
 
             return ""
         else:
-            print("File Does Not Exist")
+            return "File Does Not Exist"
 
     def listenToAudioFile_Google(self):
         if (self.fileExists):
@@ -54,4 +55,4 @@ class Speaker(object):
 
             return ""
         else:
-            print("File Does Not Exist")
+            return "File Does Not Exist"
