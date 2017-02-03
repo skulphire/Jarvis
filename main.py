@@ -12,4 +12,4 @@ if __name__ == '__main__':
     #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     #print("\nGoogle: "+testing.listenToAudioFile_Google())
     print("\n")
-    testing.listenToAudioFileCont_Google(30,120)
+    testing.listenToAudioFileCont_Google(120,500)
