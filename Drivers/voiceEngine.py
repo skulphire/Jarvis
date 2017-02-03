@@ -66,7 +66,7 @@ class Speaker(object):
 
         if (self.fileExists):
             while(start <= stop):
-                self.adjustAmbient()
+                self.adjustAmbient(1,1500)
                 with speech_recognition.AudioFile(self.audioFile) as source:
                     audio = self.recognizer.record(source,8,start)
 
