@@ -7,7 +7,7 @@ if __name__ == '__main__':
         if search in files:
             file = os.path.join(root,search)
 
-    #print(file)
+    print(file)
     testing = Speaker(file)
     #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     print("Google: "+testing.listenToAudioFile_Google())
