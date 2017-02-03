@@ -64,7 +64,7 @@ class Speaker(object):
                     audio = self.recognizer.record(source,15,start)
 
                 try:
-                    print("\nGoogle: "+self.recognizer.recognize_google(audio))
+                    print(" "+self.recognizer.recognize_google(audio))
 
                 except speech_recognition.UnknownValueError:
                     print("could not understand")

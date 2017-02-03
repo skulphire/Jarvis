@@ -11,4 +11,5 @@ if __name__ == '__main__':
     testing = Speaker(file)
     #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     #print("\nGoogle: "+testing.listenToAudioFile_Google())
-    testing.listenToAudioFileCont_Google(30,60)
+    print("\n")
+    testing.listenToAudioFileCont_Google(30,120)
