@@ -24,7 +24,7 @@ class Speaker(object):
     def listenToAudioFile_Sphinx(self):
         if(self.fileExists):
             with speech_recognition.AudioFile(self.audioFile) as source:
-                audio = self.recognizer.record(source)
+                audio = self.recognizer.record(source,10,35)
 
             try:
                 #returns String
@@ -42,7 +42,7 @@ class Speaker(object):
     def listenToAudioFile_Google(self):
         if (self.fileExists):
             with speech_recognition.AudioFile(self.audioFile) as source:
-                audio = self.recognizer.record(source)
+                audio = self.recognizer.record(source,10,35)
 
             try:
                 # returns String
