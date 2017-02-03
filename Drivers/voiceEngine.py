@@ -3,13 +3,15 @@ import pyttsx
 from os import path
 
 class Speaker(object):
-    def __init__(self, filePath):
+    def __init__(self, filePath=None):
         #talking engine
         self.engine = pyttsx.init('espeak')
         self.engine.setProperty('rate', 150)
-
-        self.audioFile = path.abspath(filePath)
-        #print(self.audioFile)
+        self.fileExists = False
+        if(filePath != None):
+            self.audioFile = path.abspath(filePath)
+            if(path.exists(self.audioFile)):
+                self.fileExists = True
 
         #recognizer
         self.recognizer = speech_recognition.Recognizer()
@@ -19,31 +21,37 @@ class Speaker(object):
         self.engine.runAndWait()
 
     def listenToAudioFile_Sphinx(self):
-        with speech_recognition.AudioFile(self.audioFile) as source:
-            audio = self.recognizer.record(source, 10)
+        if(self.fileExists):
+            with speech_recognition.AudioFile(self.audioFile) as source:
+                audio = self.recognizer.record(source)
 
-        try:
-            #returns String
-            return self.recognizer.recognize_sphinx(audio)
+            try:
+                #returns String
+                return self.recognizer.recognize_sphinx(audio)
 
-        except speech_recognition.UnknownValueError:
-            print("could not understand")
-        except speech_recognition.RequestError as e:
-            print("recog error; {0}".format(e))
+            except speech_recognition.UnknownValueError:
+                print("could not understand")
+            except speech_recognition.RequestError as e:
+                print("recog error; {0}".format(e))
 
-        return ""
+            return ""
+        else:
+            print("File Does Not Exist")
 
     def listenToAudioFile_Google(self):
-        with speech_recognition.AudioFile(self.audioFile) as source:
-            audio = self.recognizer.record(source,10)
+        if (self.fileExists):
+            with speech_recognition.AudioFile(self.audioFile) as source:
+                audio = self.recognizer.record(source)
 
-        try:
-            #returns String
-            return self.recognizer.recognize_google(audio)
+            try:
+                # returns String
+                return self.recognizer.recognize_google(audio)
 
-        except speech_recognition.UnknownValueError:
-            print("could not understand")
-        except speech_recognition.RequestError as e:
-            print("recog error; {0}".format(e))
+            except speech_recognition.UnknownValueError:
+                print("could not understand")
+            except speech_recognition.RequestError as e:
+                print("recog error; {0}".format(e))
 
-        return ""
+            return ""
+        else:
+            print("File Does Not Exist")
