@@ -42,7 +42,7 @@ class Speaker(object):
     def listenToAudioFile_Google(self):
         if (self.fileExists):
             with speech_recognition.AudioFile(self.audioFile) as source:
-                audio = self.recognizer.record(source,30,35)
+                audio = self.recognizer.record(source,15,35)
 
             try:
                 # returns String
