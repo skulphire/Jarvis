@@ -59,7 +59,7 @@ class Speaker(object):
     def adjustAmbient(self,duration, threshold):
         with speech_recognition.AudioFile(self.audioFile) as source:
             self.recognizer.adjust_for_ambient_noise(source, duration)
-            self.recognizer.energy_threshold(threshold)
+            self.recognizer.energy_threshold = threshold
 
     def listenToAudioFileCont_Google(self,start,stop):
 
