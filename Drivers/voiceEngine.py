@@ -56,3 +56,21 @@ class Speaker(object):
             return ""
         else:
             return "File Does Not Exist"
+
+    def listenToAudioFileCont_Google(self,start,stop):
+        if (self.fileExists):
+            while(start != stop):
+                with speech_recognition.AudioFile(self.audioFile) as source:
+                    audio = self.recognizer.record(source,15,start)
+
+                try:
+                    print("Google: "+self.recognizer.recognize_google(audio))
+
+                except speech_recognition.UnknownValueError:
+                    print("could not understand")
+                except speech_recognition.RequestError as e:
+                    print("recog error; {0}".format(e))
+                #return ""
+                start = start + 15
+        else:
+            return "File Does Not Exist"
