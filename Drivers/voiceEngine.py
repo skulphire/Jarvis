@@ -57,16 +57,17 @@ class Speaker(object):
         else:
             return "File Does Not Exist"
     def adjustAmbient(self,duration, threshold):
+        self.recognizer.energy_threshold = threshold
         with speech_recognition.AudioFile(self.audioFile) as source:
             self.recognizer.adjust_for_ambient_noise(source, duration)
-            self.recognizer.energy_threshold = threshold
+
 
     def listenToAudioFileCont_Google(self,start,stop):
 
         if (self.fileExists):
-            while(start != stop):
+            while(start <= stop):
                 with speech_recognition.AudioFile(self.audioFile) as source:
-                    audio = self.recognizer.record(source,5,start)
+                    audio = self.recognizer.record(source,8,start)
 
                 try:
                     print(">"+self.recognizer.recognize_google(audio))
@@ -76,6 +77,6 @@ class Speaker(object):
                 except speech_recognition.RequestError as e:
                     print("recog error; {0}".format(e))
                 #return ""
-                start = start + 5
+                start = start + 8
         else:
             return "File Does Not Exist"
