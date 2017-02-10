@@ -4,7 +4,7 @@ class voiceEngine(object):
     def __init__(self):
         # talking engine
         self.engine = pyttsx.init('espeak')
-        self.engine.setProperty('rate', 150)
+        self.engine.setProperty('rate', 100)
 
     def speak(self, phrase):
         self.engine.say(phrase)
