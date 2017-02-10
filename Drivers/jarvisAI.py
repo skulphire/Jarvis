@@ -14,5 +14,5 @@ class jarvisAI(object):
             micInput =micInput.split(" ")
             location = micInput[2]
             self.voice.speak("Showing you where"+location+"is.")
-            os.system("firefox https://www.google.nl/maps/place/" + location )#+ "/&amp;")
+            os.system("firefox https://www.google.com/maps/place/" + location )#+ "/&amp;")
 
