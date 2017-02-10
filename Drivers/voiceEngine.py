@@ -10,7 +10,7 @@ class voiceEngine(object):
 
         self.fileExists = False
         if(filePath != None):
-            self.audioFile = filePath#path.abspath(filePath)
+            self.audioFile = filePath
             if(path.exists(self.audioFile)):
                 self.fileExists = True
 
