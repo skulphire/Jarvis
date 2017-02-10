@@ -1,4 +1,4 @@
-from Drivers.voiceEngine import Speaker
+from Drivers.voiceEngine import voiceEngine
 import os
 if __name__ == '__main__':
     search = input("Filename: ")
@@ -8,9 +8,9 @@ if __name__ == '__main__':
             file = os.path.join(root,search)
 
     print(file)
-    testing = Speaker(file)
-    testing.adjustAmbient(10,50)
+    recogEngine = voiceEngine(file)
+    recogEngine.adjustAmbient(10, 50)
     #print("Sphinx: "+testing.listenToAudioFile_Sphinx())
     #print("\nGoogle: "+testing.listenToAudioFile_Google())
     print("\n")
-    testing.listenToAudioFileCont_Google(120,200)
+    recogEngine.listenToAudioFileCont_Google(120, 200)

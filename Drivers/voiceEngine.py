@@ -2,7 +2,7 @@ import speech_recognition
 import pyttsx
 from os import path
 
-class Speaker(object):
+class voiceEngine(object):
     def __init__(self, filePath=None):
         #talking engine
         self.engine = pyttsx.init('espeak')
