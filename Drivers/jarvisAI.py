@@ -16,7 +16,7 @@ class jarvisAI(object):
             self.voice.speakGoogle("Showing you where" + location + "is.")
             #self.voice.speakPYTTS("Showing you where" + location + "is.")
             os.system("firefox https://www.google.com/maps/place/" + location )#+ "/&amp;")
-        elif "Weather" in micInput:
+        elif "weather" in micInput:
             self.voice.speakGoogle("Showing you current weather")
             os.system("firefox https://www.google.com/#q=weather")
 
